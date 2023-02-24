@@ -1,0 +1,17 @@
+###
+POST http://localhost:3000/api/movie HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Nikola tesla",
+    "age": "25",
+    "email": "tesla@gmail.com"
+    /*"id": 1,
+    "title": "django",
+    "year": 1998,
+    "time": 1:60,
+    "lang": "en",
+    "dt_rel": 58,
+    "rel_country": "United Kingdom", */
+}
+
