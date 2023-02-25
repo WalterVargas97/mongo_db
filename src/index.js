@@ -18,6 +18,8 @@ const movie_castRoutes = require("./routes/moviecast");
 //middleware
 app.use(express.json());
 app.use('/api', movieRoutes);
+app.use('/api', movie_castRoutes);
+
 
 
 

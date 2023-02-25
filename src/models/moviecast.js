@@ -12,7 +12,7 @@ const moviecastSchema =  mongoose.Schema({
     role: {
     type: String,
     required: true
-    }
+        }
 });
 
 module.exports = mongoose.model('Moviecast', moviecastSchema);
