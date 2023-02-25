@@ -1,0 +1,11 @@
+//----------      DIRECTOR    ------------
+//      
+###
+POST http://localhost:3000/api/directors HTTP/1.1
+Content-Type: application/json
+
+{
+    "dir_id": 1,
+    "dir_fname": "Andres",
+    "dir_lname": "Garcia",
+}

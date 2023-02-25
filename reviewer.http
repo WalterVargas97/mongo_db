@@ -1,0 +1,10 @@
+//---------------- REVIEWER ------------------
+//post
+###
+POST http://localhost:3000/api/reviewers HTTP/1.1
+Content-Type: application/json
+
+{
+    "rev_id": 1,
+    "rev_name": "Andres",
+}
