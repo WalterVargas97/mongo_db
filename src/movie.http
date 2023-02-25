@@ -8,7 +8,7 @@ Content-Type: application/json
     "mov_id": 1,
     "mov_title": "lolito",
     "mov_year": "1997",
-    "mov_time": 58,
+    "mov_time": 8,
     "mov_lang": 25,
     "mov_dt_rel": "octubre,1995",
     "mov_rel_country": "Colombia"
@@ -22,4 +22,14 @@ Content-Type: application/json
 //get by ID
 ###
 GET http://localhost:3000/api/movie/:id HTTP/1.1
+Content-Type: application/json
+
+//update by ID
+###
+PUT  http://localhost:3000/api/movie/:id HTTP/1.1
+Content-Type: application/json
+
+//Delete by ID
+###
+DELETE   http://localhost:3000/api/movie/:id HTTP/1.1
 Content-Type: application/json

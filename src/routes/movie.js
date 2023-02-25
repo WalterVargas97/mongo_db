@@ -24,15 +24,30 @@ router.get('/movie', (req, res) => {
 // get by id
 router.get('/movie/:id', (req, res) => {
     const { id } = req.params;
-    movie.findOne( { movieId: id })
+    movie.findOne( { movie_id: id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
     
 });
 
 // put  movie
+router.put('/movie/:id', (req, res) => {
+    const { id } = req.params;
+    const { movie_id, mov_title, mov_year, mov_time, mov_lang, mov_dt_rel, mov_rel_country} =req.body;
+    movieSchema
+    .updateOne ({ movie_id: id }, { $set: { movie_id, mov_title, mov_year, mov_time, mov_lang, mov_dt_rel, mov_rel_country }})
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 
 // delete movie
-
+router.delete('/movie/:id', (req, res) => {
+    const { id } = req.params;
+    movieSchema
+    .deleteOne({ movie_id: id })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
 
 module.exports = router;
