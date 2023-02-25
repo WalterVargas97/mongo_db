@@ -1,20 +1,25 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
-
-const movieRoutes = require("./routes/movie");
-
-
 require("dotenv").config();
-
 const app = express();
 //const port = process.env.PORT || 9000;
 
 
-app.use(express.json());
+//routes
+const movieRoutes = require("./routes/movie");
+const movie_castRoutes = require("./routes/moviecast");
+
+
+
+
+
+//depracated
 
 //middleware
+app.use(express.json());
 app.use('/api', movieRoutes);
+
+
 
 
 //routes

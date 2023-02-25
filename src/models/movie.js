@@ -1,53 +1,34 @@
 const mongoose = require('mongoose');
 
-const movieSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-        
-    },
-    age: {
-        type: Number,
-        required: true
-    },
-    email: {
-    type: String,
+const movieSchema =  mongoose.Schema({
+    mov_id:{
+    type: Number,
     required: true,
-
     },
-    
-    /* id : {
+    mov_title: {
+    type: String,
+    required: true
+    },
+    mov_year: {
     type: Number,
-    require: true,    
+    required: true
     },
-    title: {
-        Type : String,
-        required: true,
-        unique: true,
-        trim: true
-    },
-    year: {
+    mov_time: {
     type: Number,
-    require: true,    
+    required: true
     },
-    time: {
-        type: Number,
-        require: true,    
+    mov_lang: {
+    type: String,
+    required: true
     },
-
-    lang: {
-        Type : String,
-        required: true,
+    mov_dt_rel: {
+    type: String,
+    required: true
     },
-    dt_rel: {
-        type: Number,
-        require: true,    
-        },
-    rel_country: {
-        Type : String,
-        required: true,
-    }, */
-
+    mov_rel_country: {
+    type: String,
+    required: true
+        }
 });
 
 module.exports = mongoose.model('Movie', movieSchema);
