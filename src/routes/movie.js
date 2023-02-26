@@ -24,7 +24,8 @@ router.get('/movie', (req, res) => {
 // get by id
 router.get('/movie/:id', (req, res) => {
     const { id } = req.params;
-    movie.findOne( { movie_id: id })
+    movie.
+    findOne( { movie_id: id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
     
@@ -33,9 +34,9 @@ router.get('/movie/:id', (req, res) => {
 // put  movie
 router.put('/movie/:id', (req, res) => {
     const { id } = req.params;
-    const { movie_id, mov_title, mov_year, mov_time, mov_lang, mov_dt_rel, mov_rel_country} =req.body;
+    const { mov_id, mov_title, mov_year, mov_time, mov_lang, mov_dt_rel, mov_rel_country} =req.body;
     movieSchema
-    .updateOne ({ movie_id: id }, { $set: { movie_id, mov_title, mov_year, mov_time, mov_lang, mov_dt_rel, mov_rel_country }})
+    .updateOne ({ movie_id: id }, { $set: { mov_id, mov_title, mov_year, mov_time, mov_lang, mov_dt_rel, mov_rel_country }})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
