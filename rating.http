@@ -25,6 +25,13 @@ Content-Type: application/json
 PUT  http://localhost:3000/api/rating/:id HTTP/1.1
 Content-Type: application/json
 
+{
+    "mov_id": 10,
+    "rev_id": 10,
+    "rev_stars": 5,
+    "num_o_ratings": 5
+}
+
 //Delete by ID
 ###
 DELETE   http://localhost:3000/api/rating/:id HTTP/1.1
