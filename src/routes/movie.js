@@ -4,7 +4,7 @@ const movieSchema = require("../models/movie");
 const router =  express.Router();
 
 // create movie
-router.post("/movies", (req, res) => {
+router.post("/movie", (req, res) => {
     const movie = movieSchema(req.body);
     movie
     .save()

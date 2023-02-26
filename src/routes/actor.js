@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //  crear
-router.post("/actors", (req, res) => {
+router.post("/actor", (req, res) => {
     const actor = actorSchema(req.body)
     actor
     .save()
@@ -11,7 +11,7 @@ router.post("/actors", (req, res) => {
 });
 
 // obtener
-router.get("/actors", (req, res) => {
+router.get("/actor", (req, res) => {
     actorSchema
     .find()
     .then((data) => res.json(data))
@@ -19,7 +19,7 @@ router.get("/actors", (req, res) => {
 });
 
 //  obtener actor por id
-router.get("/actors/:id", (req, res) => {
+router.get("/actor/:id", (req, res) => {
     const { id } = req.params;
     actorSchema
     .findById(id)
@@ -28,7 +28,7 @@ router.get("/actors/:id", (req, res) => {
 });
 
 // update - actualizar 
-router.put("/actors/:id", (req, res) => {
+router.put("/actor/:id", (req, res) => {
     const { id } = req.params;
     const {act_id, act_fname, act_lname, act_gender} = req.body;
     actorSchema
@@ -38,7 +38,7 @@ router.put("/actors/:id", (req, res) => {
 });
 
 //  delete - eliminar
-router.delete("/actors/:id", (req, res) => {
+router.delete("/actor/:id", (req, res) => {
     const { id } = req.params;
     actorSchema
       .remove({ act_id: id })

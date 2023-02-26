@@ -1,7 +1,7 @@
 // --------------   ACTOR  --------------
 //post
 ###
-POST http://localhost:3000/api/actors HTTP/1.1
+POST http://localhost:3000/api/actor HTTP/1.1
 Content-Type: application/json
 
 {
@@ -13,13 +13,13 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3000/api/actors HTTP/1.1
+GET http://localhost:3000/api/actor HTTP/1.1
 
 ###
-GET http://localhost:000/api/actors/1 HTTP/1.1
+GET http://localhost:000/api/actor/1 HTTP/1.1
 
 ###
-PUT http://localhost:3000/api/actors/1 HTTP/1.1
+PUT http://localhost:3000/api/actor/1 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -30,5 +30,5 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/api/actors/1 HTTP/1.1
+DELETE http://localhost:3000/api/actor/1 HTTP/1.1
 
