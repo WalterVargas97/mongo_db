@@ -7,9 +7,10 @@ const app = express();
 
 //routes
 const movieRoutes = require("./routes/movie");
-const movie_castRoutes = require("./routes/moviecast");
-
-
+const moviecastRoutes = require("./routes/moviecast");
+const moviegenres = require("./routes/moviegenres");
+const genresRoutes = require("./routes/genres");
+const ratingRoutes = require("./routes/rating");
 
 
 
@@ -18,6 +19,13 @@ const movie_castRoutes = require("./routes/moviecast");
 //middleware
 app.use(express.json());
 app.use('/api', movieRoutes);
+app.use('/api', moviecastRoutes);
+app.use('/api', moviegenres);
+app.use('/api', genresRoutes);
+app.use('/api', ratingRoutes);
+
+
+
 
 
 

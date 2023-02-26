@@ -28,7 +28,7 @@ const movieSchema =  mongoose.Schema({
     mov_rel_country: {
     type: String,
     required: true
-        }
+    }
 });
 
 module.exports = mongoose.model('Movie', movieSchema);
