@@ -1,10 +1,11 @@
-const express = require('express');
-const reviewerSchema = require("../models/review");
+const express = require("express");
+const reviewer = require("../models/reviewer");
+const reviewerSchema = require("../models/reviewer");
 
-const router = express.Router();
+const router =  express.Router();
 
-//creste reviewer
-router.post("/reviewers", (req, res) => {
+//  Create
+router.post("/reviewer", (req, res) => {
     const reviewer = reviewerSchema(req.body);
     reviewer
     .save()
@@ -12,38 +13,38 @@ router.post("/reviewers", (req, res) => {
     .catch((error) => res.json({ message: error}));
 });
 
-//  obtener reviewers
-router.get("/reviewers", (req, res) => {
-    reviewerSchema
+//  Traer info
+router.get("/reviewer", (req, res) => {
+    reviewer
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
 });
 
-//  obtener reviewer por id
-router.get("/reviewers/:id", (req, res) => {
+//  Traer info por id
+router.get("/reviewer/:id", (req, res) => {
     const { id } = req.params;
-    reviewerSchema
+    reviewer
     .findById(id)
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
 });
 
-// actualizar
-router.put("/reviewers/:id", (req, res) => {
+//  Actualizar info
+router.put("/reviewer/:id", (req, res) => {
     const { id } = req.params;
-    const {rev_id, rev_name } = req.body;
+    const { rev_id, rev_name } = req.body;
     reviewerSchema
-    .updateOne({rev_id: id }, {$set: {rev_id, rev_name}})
+    .updateOne({ rev_id: id }, {$set: { rev_id, rev_name }})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
 });
 
-// eliminar
-router.delete("/reviewers/:id", (req, res) => {
+//  Eliminar info reviwer
+router.delete("/reviewer/:id", (req, res) => {
     const { id } = req.params;
     reviewerSchema
-      .remove({ rev_id: id })
+      .deleteOne({ rev_id: id })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
 });

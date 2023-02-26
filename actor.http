@@ -5,9 +5,9 @@ POST http://localhost:3000/api/actor HTTP/1.1
 Content-Type: application/json
 
 {
-    "act_id": 1,
+    "act_id": 20,
     "act_fname": "Andres",
-    "act_lname": "Garcia",
+    "act_lname": "Romero",
     "act_gender": "M"
 }
 

@@ -1,9 +1,12 @@
-const express = require('express');
+const express = require("express");
+const actor = require("../models/actor");
+const actorSchema = require("../models/actor");
+
 const router = express.Router();
 
 //  crear
 router.post("/actor", (req, res) => {
-    const actor = actorSchema(req.body)
+    const actor = actorSchema(req.body);
     actor
     .save()
     .then((data) => res.json(data))
@@ -12,7 +15,7 @@ router.post("/actor", (req, res) => {
 
 // obtener
 router.get("/actor", (req, res) => {
-    actorSchema
+    actor
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
@@ -21,7 +24,7 @@ router.get("/actor", (req, res) => {
 //  obtener actor por id
 router.get("/actor/:id", (req, res) => {
     const { id } = req.params;
-    actorSchema
+    actor
     .findById(id)
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
@@ -41,7 +44,7 @@ router.put("/actor/:id", (req, res) => {
 router.delete("/actor/:id", (req, res) => {
     const { id } = req.params;
     actorSchema
-      .remove({ act_id: id })
+      .deleteOne({ act_id: id })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
 });

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const reviewersSchema = mongoose.createSchema({
+const reviewerSchema = mongoose.Schema({
     rev_id:{
         type: Number,
         required: true
@@ -11,4 +11,4 @@ const reviewersSchema = mongoose.createSchema({
     }
 });
 
-module.exports.model('Reviewer', reviewersSchema);
+module.exports = mongoose.model('Reviewer', reviewerSchema);

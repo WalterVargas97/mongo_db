@@ -1,8 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const express = require("express");
+const movieDirection = require("../models/movieDirection");
+const movieDirectionSchema = require("../models/movieDirection");
 
-//  crear 
-router.post("/movieDirections", (req, res) => {
+const router =  express.Router();
+
+//  crear movieDirection
+router.post("/movieDirection", (req, res) => {
     const movieDirection = movieDirectionSchema(req.body);
     movieDirection
     .save()
@@ -10,26 +13,25 @@ router.post("/movieDirections", (req, res) => {
     .catch((error) => res.json({ message: error}));
 });
 
-//  obtener todos
-router.get("/movieDirections", (req, res) => {
-    movieDirectionSchema
+// obtener
+router.get("/movieDirection", (req, res) => {
+    movieDirection
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
 });
 
-//  traer director por id
-router.get("/movieDirections/:id", (req, res) => {
+//  obtener movieDirection por id
+router.get("/movieDirection/:id", (req, res) => {
     const { id } = req.params;
-    movieDirectionSchema
+    movieDirection
     .findById(id)
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
 });
 
-
-//  actualizar o modificar
-router.put("/movieDirections/:id", (req, res) => {
+// update - actualizar
+router.put("/movieDirection/:id", (req, res) => {
     const { id } = req.params;
     const { dir_id, mov_id } = req.body;
     movieDirectionSchema
@@ -38,11 +40,11 @@ router.put("/movieDirections/:id", (req, res) => {
     .catch((error) => res.json({ message: error}));
 });
 
-//  eliminar
-router.delete("/movieDirections/:id", (req, res) => {
+//  delete - eliminar
+router.delete("/movieDirection/:id", (req, res) => {
     const { id } = req.params;
-    reviewerSchema
-      .remove({ dir_id: id })
+    movieDirectionSchema
+      .deleteOne({ dir_id: id })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
 });

@@ -1,8 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const express = require("express");
+const director = require("../models/director");
+const directorSchema = require("../models/director");
+
+const router =  express.Router();
 
 //  crear
-router.post("/directors", (req, res) => {
+router.post("/director", (req, res) => {
     const director = directorSchema(req.body)
     director
     .save()
@@ -11,37 +14,37 @@ router.post("/directors", (req, res) => {
 });
 
 // obtener
-router.get("/directors", (req, res) => {
-    directorSchema
+router.get("/director", (req, res) => {
+    director
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
 });
 
 //  obtener director por id
-router.get("/directors/:id", (req, res) => {
+router.get("/director/:id", (req, res) => {
     const { id } = req.params;
-    directorSchema
+    director
     .findById(id)
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error}));
 });
 
 // update - actualizar 
-router.put("/diretors/:id", (req, res) => {
+router.put("/director/:id", (req, res) => {
     const { id } = req.params;
     const { dir_id, dir_fname, dir_lname } = req.body;
     directorSchema
-    .updateOne({ dir_id: id }, {$set: { dir_id, dir_fname, dir_lname }})
+    .updateOne({ dir_id: id}, { $set: { dir_id, dir_fname, dir_lname }})
     .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error}));
-});
+    .catch((error) => res.json({ message: error }));
+  });
 
 //  delete - eliminar
-router.delete("/actors/:id", (req, res) => {
+router.delete("/director/:id", (req, res) => {
     const { id } = req.params;
     directorSchema
-      .remove({ dir_id: id })
+      .deleteOne({ dir_id: id })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
 });
