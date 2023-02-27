@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const app = express();
-//const port = process.env.PORT || 9000;
+
+const port = process.env.PORT || 9000;
 
 //routes
 const movieRoutes = require("./routes/movie");
@@ -41,5 +42,4 @@ mongoose
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((error) => console.error(error));
 
-// port  =  3000 cambiar
-app.listen(3000, () => console.log("Server listening on port", 3000));
+app.listen(port, () => console.log("Server listening on port", port));
