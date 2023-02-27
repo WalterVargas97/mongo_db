@@ -29,7 +29,7 @@ En este proyecto seguimos con el manejo de datos a traves de peticiones http con
 ####  Pruebas con extension REST client y Postman 
 
 - las pruebas de respuesta se ejecutaron en la app, pueden varidarse a traves de los archivos http
-- Para ver las de postman... 
+- Pruebas [postman](https://documenter.getpostman.com/view/18244679/2s93CPsDTN) 
 
 ## Autores
 
