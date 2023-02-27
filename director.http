@@ -1,0 +1,30 @@
+//----------      DIRECTOR    ------------
+//      
+###
+POST http://localhost:3000/api/director HTTP/1.1
+Content-Type: application/json
+
+{
+    "dir_id": 9,
+    "dir_fname": "Andrea",
+    "dir_lname": "Moreno"
+}
+
+###
+GET http://localhost:3000/api/director HTTP/1.1
+
+###
+GET http://localhost:3000/api/director/63fb32066934a54d34278566 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/director/7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "dir_id": 7,
+    "dir_fname": "Andrea",
+    "dir_lname": "Moreno"
+}
+
+###
+DELETE http://localhost:3000/api/director/7 HTTP/1.1

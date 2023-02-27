@@ -1,0 +1,28 @@
+// ------------ MOVIE DIRECTION ------------
+//post
+###
+POST http://localhost:3000/api/movieDirection HTTP/1.1
+Content-Type: application/json
+
+{
+    "dir_id": 6,
+    "mov_id": 55127
+}
+
+###
+GET http://localhost:3000/api/movieDirection HTTP/1.1
+
+###
+GET http://localhost:3000/api/movieDirection/63fb5dd7d9fc29857b0588c9 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/movieDirection/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "dir_id": 96,
+    "mov_id": 487
+}
+
+###
+DELETE http://localhost:3000/api/movieDirection/96 HTTP/1.1

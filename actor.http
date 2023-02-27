@@ -1,0 +1,32 @@
+// --------------   ACTOR  --------------
+###
+POST http://localhost:3000/api/actor HTTP/1.1
+Content-Type: application/json
+
+{
+    "act_id": 7,
+    "act_fname": "Andres",
+    "act_lname": "Romero",
+    "act_gender": "M"
+}
+
+###
+GET http://localhost:3000/api/actor HTTP/1.1
+
+###
+GET http://localhost:000/api/actor/1 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/actor/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "act_id": 1,
+    "act_fname": "Andrea",
+    "act_lname": "Martinez",
+    "act_gender": "F"
+}
+
+###
+DELETE http://localhost:3000/api/actor/1 HTTP/1.1
+
