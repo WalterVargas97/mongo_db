@@ -22,7 +22,7 @@ En este proyecto seguimos con el manejo de datos a traves de peticiones http con
 - crea un archivo .env con la variable MONGODB_URI  y las credenciales para conectarse a su base de datos en mongodb.
 - Abra una terminal y navegue por el proyecto.
 - ejecutar comando `npm install` para instalar las dependencias necesarias.
-- ejecute `npm run start` para iniciar una instancia de MongoDB en el puerto 3000.
+- ejecute `npm run dev` para iniciar una instancia de MongoDB en el puerto 3000.
 - En este proyecto se prueba cada una de las carpetas en los archivos con extension htttp.
 - Puede adaptarlo a sus requerimientos...
 
