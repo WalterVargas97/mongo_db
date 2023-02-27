@@ -28,11 +28,11 @@ En este proyecto seguimos con el manejo de datos a traves de peticiones http con
 
 ####  Pruebas con extension REST client y Postman 
 
-- las pruebas de respuesta se ejecutaron en la app, pueden varidarse a traves de los archivos http
+- las pruebas de respuesta se ejecutaron en la app, pueden validarse a traves de los archivos http
 - Pruebas [postman](https://documenter.getpostman.com/view/18244679/2s93CPsDTN) 
 
 ## Autores
 
-| [<img src="https://avatars.githubusercontent.com/u/62077166?s=400&u=656a3c2b6e663cf371860e3e6b1fc66de1757f85&v=4" width=115><br><sub>Angélica Guevara</sub>](https://github.com/Aguevarab0729) 
+[<img src="https://avatars.githubusercontent.com/u/62077166?s=400&u=656a3c2b6e663cf371860e3e6b1fc66de1757f85&v=4" width=115><br><sub>Angélica Guevara</sub>](https://github.com/Aguevarab0729) 
 
-| [<img src="https://avatars.githubusercontent.com/u/109813184?v=4" width=115><br><sub>Walter Vargas</sub>>](https://github.com/WalterVargas97) |
+[<img src="https://avatars.githubusercontent.com/u/109813184?v=4" width=115><br><sub>Walter Vargas</sub>>](https://github.com/WalterVargas97) |
